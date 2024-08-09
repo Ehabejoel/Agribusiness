@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Assets/css/AuthStyles/SignUp.css">
+    <style>
+        /* Style the error messages */
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class='main'>
+        <div class='second_container'>
+            <div class="left-side">
+                <h1>AgroVista</h1>
+                <p>Ready For An Amazing Experience?</p>
+                <div class="app-links">
+                    <img src="../../Assets/Images/Logos/a.png" alt="Get it on Google Play">
+                    <img src="../../Assets/Images/Logos/App_Store.png" alt="Download on the App Store">
+                </div>
+            </div> 
+            <div class='right-side'>
+                <div class="login-form">
+                    <h2>SignUp to AgroVista.</h2>
+                    <p class="faded-text">Welcome to AgroVista!</p>
+                    <div class="social-login">
+                        <button><img src="../../Assets/Images/Logos/Google_logo.png" alt="Google Icon"/>Signup with Google</button>
+                        <button><img src="../../Assets/Images/Logos/facebooklogo.png" alt="Facebook Icon"/>Signup with Facebook</button>
+                    </div>
+                    <div class="divider">or</div>
+                    <form id="signup-form">
+                        <div class='nn'>
+                            <input id="name" type="text" placeholder='UserName' required>
+                            <span id="name-error" class="error-message"></span>
+                            <input id="tel" type="tel" placeholder='PhoneNumber' required>
+                            <span id="tel-error" class="error-message"></span>
+                        </div>
+                        <div id="general-error" class="general-error"></div>
+                        <input id="email" type="email" placeholder="Email" required>
+                        <span id="email-error" class="error-message"></span>
+                        <input id="password" type="password" placeholder="Password" required>
+                        <span id="password-error" class="error-message"></span>
+                        <div class="form_options">
+                            <label>
+                                <input type="checkbox"/>&nbsp; Remember me
+                            </label>
+                        </div>
+                        <button type="submit" id="login-button">SignUp</button>
+                    </form>
+                    <div class="footer">
+                        <p>Already have an account? <a href="n">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // No password validation logic needed
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            // You can add other validation here if necessary
+        });
+    </script>
+</body>
+</html>

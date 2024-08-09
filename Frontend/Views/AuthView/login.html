@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login AgriSphere</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../Assets/css/AuthStyles/login.css">
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+        .general-error {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="second_container">
+            <div class="left-side">
+                <h1>AgroVista</h1>
+                <p>Ready For An Amazin Experience?</p>
+                <div class="app-links">
+                    <img src="/Frontend/Assets/Images/Logos/a.png" alt="Get it on Google Play">
+                    <img src="/Frontend/Assets/Images/Logos/App_Store.png" alt="Download on the App Store">
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="login-form">
+                    <h2>Login to AgroVista.</h2>
+                    <p class="faded-text">Welcome back! login with your data that you entered during registration</p>
+                    <div class="social-login">
+                        <button><img src="/Frontend/Assets/Images/Logos/Google_logo.png" alt="Google Icon">Login with Google</button>
+                        <button><img src="/Frontend/Assets/Images/Logos/facebooklogo.png" alt="Facebook Icon">Login with Facebook</button>
+                    </div>
+                    <div class="divider">or</div>
+                    <form id="login-form">
+                        <div id="general-error" class="general-error"></div>
+                        <input id="email" type="email" placeholder="Email">
+                        <span id="email-error" style="color: red;"></span>
+                        <input id="password" type="password" placeholder="Password">
+                        <span id="password-error" style="color: red;"></span>
+                        <div class="form_options">
+                            <label>
+                                <input type="checkbox">&nbsp; Remember me
+                            </label>
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                        <button type="submit" id="login-button">LOGIN</button>
+                    </form>
+                    <div class="footer">
+                        <p>Don't have an account? <a href="#">Register</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const validEmails = ['ehabe@gmail.com', 'axel@gmail.com', 'example3@test.com'];
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const emailError = document.getElementById('email-error');
+            const passwordError = document.getElementById('password-error');
+            const generalError = document.getElementById('general-error');
+
+            let isValid = true;
+
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+                document.getElementById('email').classList.remove('error');
+            }
+
+            if (password === '') {
+                passwordError.textContent = 'Enter password';
+                document.getElementById('password').classList.add('error');
+                isValid = false;
+            } else {
+                const passwordCriteria = {
+                    length: password.length >= 8,
+                    uppercase: /[A-Z]/.test(password),
+                    lowercase: /[a-z]/.test(password),
+                    digits: (password.match(/\d/g) || []).length >= 3,
+                    symbol: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                };
+
+                if (!Object.values(passwordCriteria).every(Boolean)) {
+                    passwordError.textContent = 'Password must be at least 8 characters long and contain at least 1 uppercase letter, 1 lowercase letter, 3 digits, and 1 symbol.';
+                    document.getElementById('password').classList.add('error');
+                    isValid = false;
+                } else {
+                    passwordError.textContent = '';
+                    document.getElementById('password').classList.remove('error');
+                }
+            }
+
+            if (isValid && !validEmails.includes(email)) {
+                generalError.textContent = 'Email or password incorrect.';
+                document.getElementById('email').classList.add('error');
+                document.getElementById('password').classList.add('error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form is valid and ready to be submitted.');
+            }
+        });
+
+        document.getElementById('email').addEventListener('input', function() {
+            document.getElementById('email').classList.remove('error');
+            document.getElementById('email-error').textContent = '';
+            document.getElementById('general-error').textContent = '';
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            document.getElementById('password').classList.remove('error');
+            document.getElementById('password-error').textContent = '';
+            document.getElementById('general-error').textContent = '';
+        });
+    </script>
+</body>
+</html>

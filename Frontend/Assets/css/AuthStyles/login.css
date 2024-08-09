@@ -1,0 +1,247 @@
+.main {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f6f2f8; 
+ }
+ .second_container {
+    width: 70%;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+ }
+ .left-side {
+    background-color: #088d34;
+    color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-image: url('../../Images/Logos/agri2.jpg');
+    background-size: cover;
+ }
+ .left-side h1 {
+    margin: 20px 0;
+    font-size: 24px;
+    margin-top: 10px;
+ 
+ }
+ #img {
+   width: 20px;
+   height: 20px;
+ }
+ .left-side p {
+    margin: 10px 0;
+    font-size: 16px;
+ }
+ .left-side img {
+    width: 80%;
+    max-width: 8000px;
+ }
+ @keyframes grow {
+    from {
+        width: 100px;
+        height: 100px;
+    }
+    to {
+        width: 300px; 
+        height: 300px;
+    }
+ }
+ .left-side .app-links {
+    margin-top: 90%;
+    
+ }
+ .left-side .app-links img {
+    margin: 0 10px;
+    width: 120px;
+ }
+ .right-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;   
+ }
+ 
+ .Header-left p {
+   font-size: 15px;
+  
+ }
+ .login-form {
+    width: 100%;
+    max-width: 400px;
+ }
+ .h2 {
+    margin-bottom: 20px;
+    font-size:24px;
+ }
+ .social-login {
+    display: flex;
+    flex-direction: column;
+ }
+ .social-login button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:5px;
+    box-shadow: 2px 2px 3px 1px #e7e6e6;
+ }
+  .social-login button img {
+    margin-right: 10px;
+    width: 20px;
+ }
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #888;
+ }
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    margin: 0 10px;
+ }
+  form {
+    display: flex;
+    flex-direction: column;
+ }
+  form input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+ }
+ #login-button {
+    padding: 10px;
+    background-color: #088d34;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+ }
+.footer {
+    text-align: center;
+    margin-top: 20px;
+ }
+.footer a {
+    color: #088d34;
+    text-decoration: none;
+ }
+ .form_options {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin: 10px 0;
+ }
+ .form_options label {
+ display: flex;
+ align-items: center;
+ }
+ .form_options a {
+ text-decoration: none;
+ color:#088d34;
+ font-size: 14px;
+ }
+ .left-side h1, .left-side p, .left-side img, .left-side .app-links {
+ position: relative;
+ z-index: 2;
+ }
+ .faded-text {
+    opacity: 0.5;
+ }
+ .app-links2 {
+    display: none;
+ }
+ /* Responsive Design for Screens with max width 600px */
+ 
+ @media (max-width: 600px) {
+    *{
+       margin: 0;
+       padding: 0;
+    }
+    .main {
+        height: auto;
+        padding: 20px;
+    }
+    .second_container {
+        width: 100%;
+        margin: 0 10px;
+        flex-direction: column;
+        height: 95vh;
+        padding: 10px;
+    }
+    .left-side {
+        display: none;
+    }
+    .right-side {
+        width: 90%;
+        padding: 20px;
+        box-shadow: none;
+    }
+    .login-form {
+        width: 100%;
+        padding: 20px;
+        margin: 10px 0;
+    }
+    .login-form .social-login button {
+        padding: 15px;
+        border-radius: 3%;
+        margin: 10px 0;
+ 
+    }
+    .login-form form input, .login-form form button {
+        padding: 12px;
+        margin: 10px 0;
+    }
+    .app-links2 {
+       margin-top: 20px;
+       display: flex;
+    }
+    .app-links2 img {
+       margin: 0 10px;
+       width: 100px;
+    }  
+ }
+ @media only screen and (min-width: 600px) {
+    .left-side .background_circle {
+       position: absolute;
+       top: 40%;
+       left: 25%;
+       width: 250px;
+       height: 250px;
+    }
+    .grow-image{
+       position: absolute;
+        width: 50px;
+        height: 50px;
+        animation: grow 5s infinite; 
+    }
+    @keyframes grow {
+       from {
+           width: 300px;
+           height: 300px;
+       }
+       to {
+           width: 300px; 
+           height: 300px;
+       }
+    }
+ }
